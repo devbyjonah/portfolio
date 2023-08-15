@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Your default theme */
+  --background: white;
+  --background-transparent: rgba(255, 255, 255, 0.5);
+  --foreground: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme="dark"] {
+  --background: black;
+  --background-transparent: rgba(0, 0, 0, 0.5);
+  --foreground: white;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.dark {
+  background: black;
+  color: white;
+}
+
+#blur-overlay {
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
 }
