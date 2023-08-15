@@ -25,3 +25,7 @@
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
 }
+
+#nav-links {
+  z-index: 1001;
+}

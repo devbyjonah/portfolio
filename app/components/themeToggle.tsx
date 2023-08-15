@@ -18,14 +18,19 @@ export default function ThemeToggle() {
 
 	if (!mounted) return null;
 
+	const sharedClasses = "rounded p-6 cursor-pointer";
+
 	return (
 		<button
-			className="hover:scale-125"
-			onClick={() => {
-				setTheme(theme === "light" ? "dark" : "light");
-			}}
+			className="bg-black dark:bg-white rounded h-12 w-12 my-auto dark:drop-shadow-yellow drop-shadow-gray"
+			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 		>
-			{theme === "light" ? <RxMoon size={30} /> : <RxSun size={30} />}
+			{" "}
+			{theme === "light" ? (
+				<RxMoon className="mx-auto bg-black text-white" size={30} />
+			) : (
+				<RxSun className="mx-auto bg-white text-black" size={30} />
+			)}
 		</button>
 	);
 }
