@@ -2,22 +2,25 @@ import ThemeToggle from "./themeToggle";
 import NavLinks from "./navLinks";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
 	return (
-		<div className="fixed w-full dark:bg-black bg-white">
+		<header className="fixed w-full dark:bg-black bg-white">
 			<div className="max-w-7xl mx-auto flex justify-between p-6">
-				<div className="flex gap-10">
-					<Image
-						src="/profile.png"
-						alt="devbyjonah logo"
-						width={75}
-						height={75}
-					/>
+				<div className="flex gap-6 md:gap-10">
+					<Link href="#intro">
+						<Image
+							src="/profile.png"
+							alt="devbyjonah logo"
+							width={75}
+							height={75}
+						/>
+					</Link>
 					<ThemeToggle />
 				</div>
 				<NavLinks />
 			</div>
-		</div>
+		</header>
 	);
 }

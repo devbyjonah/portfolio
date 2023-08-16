@@ -22,7 +22,7 @@ export default function ThemeToggle() {
 
 	return (
 		<button
-			className="bg-black dark:bg-white rounded h-12 w-12 my-auto dark:drop-shadow-yellow drop-shadow-gray"
+			className="bg-black dark:bg-white rounded h-12 w-12 my-auto drop-shadow-logo-blue"
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 		>
 			{" "}

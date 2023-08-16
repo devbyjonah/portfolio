@@ -18,7 +18,10 @@ export default function NavLinks() {
 		return (
 			<a
 				onClick={() => setOpen(false)}
-				className={"text-xl font-light hover:underline " + className}
+				className={
+					"underline decoration-logo-blue text-xl font-light hover:underline " +
+					className
+				}
 				href={href}
 			>
 				{label}
