@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState } from "react";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
@@ -16,7 +18,7 @@ export default function NavLinks() {
 		className?: string;
 	}) {
 		return (
-			<a
+			<Link
 				onClick={() => setOpen(false)}
 				className={
 					"underline decoration-logo-blue text-xl font-light hover:underline " +
@@ -25,7 +27,7 @@ export default function NavLinks() {
 				href={href}
 			>
 				{label}
-			</a>
+			</Link>
 		);
 	}
 

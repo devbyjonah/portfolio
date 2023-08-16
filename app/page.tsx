@@ -2,11 +2,20 @@ import {
   PiGithubLogoBold,
   PiLinkedinLogoBold,
   PiTwitterLogoBold,
+  PiShareFatFill,
+  PiEnvelopeSimple,
 } from "react-icons/pi";
-import { MdEmail } from "react-icons/md";
-import Image from "next/image";
 
-import profilePic from "../public/jonahFinal.png";
+import Image from "next/image";
+import Link from "next/link";
+
+function TechBadge({ text }: { text: string }) {
+  return (
+    <span className="text-sm md:text-base font-light text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
+      {text}
+    </span>
+  );
+}
 
 function LogoButton({
   href,
@@ -82,7 +91,7 @@ export default function Home() {
               <PiTwitterLogoBold />
             </LogoButton>
             <LogoButton href="mailto:devbyjonah@gmail.com">
-              <MdEmail />
+              <PiEnvelopeSimple />
             </LogoButton>
           </div>
         </div>
@@ -113,7 +122,7 @@ export default function Home() {
             Github, UI design/development, Relational Databases, and many more."
           />
           <Paragraph text="Here are some of the technologies I'm using currently:" />
-          <ul className="text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500">
+          <ul className="text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue columns-2 md:columns-3">
             <li>Javascript (ES6+)</li>
             <li>Typescript</li>
             <li>React</li>
@@ -122,8 +131,67 @@ export default function Home() {
             <li>Tailwind</li>
           </ul>
         </div>
-        <div className="relative flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue overflow-hidden">
+        <div className="flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue overflow-hidden">
           <Image alt="Me!" src="/jonahFinal.png" width={300} height={300} />
+        </div>
+      </section>
+      <section
+        id="work"
+        className="min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center p-6 pt-24 md:pt-0"
+      >
+        <div className="flex flex-col gap-6">
+          <Heading
+            title="Featured App"
+            lightColor="text-gray-700"
+            darkColor="text-gray-400"
+          />
+          <Heading title="Tempo Control" />
+          <div className="max-w-fit border-2 border-dashed border-logo-blue rounded p-6">
+            <Paragraph text="A web application for musicians to pracice and improve their tempo control using a highly customizable metronome. The app is built using cutting edge features from NextJS 13, makes use of the Web Audio API for precise scheduling of audio events, and integrates the Spotify API to allow users to search for tracks or songs they want to work on." />
+
+            <Link
+              href="https://github.com/devbyjonah/tempocontrol"
+              target="_blank"
+            >
+              <PiGithubLogoBold
+                className="inline-block hover:bg-logo-blue hover:drop-shadow-logo-blue rounded-full p-2"
+                size={60}
+              />
+            </Link>
+            <Link href="https://tempocontrol.vercel.app" target="_blank">
+              <PiShareFatFill
+                className="inline-block hover:bg-logo-blue hover:drop-shadow-logo-blue rounded-full p-2"
+                size={60}
+              />
+            </Link>
+
+            <ul className="mt-2 flex items-center gap-6 flex-wrap">
+              <li>
+                <TechBadge text="Next" />
+              </li>
+              <li>
+                <TechBadge text="React" />
+              </li>
+              <li>
+                <TechBadge text="Typescript" />
+              </li>
+              <li>
+                <TechBadge text="Spotify API" />
+              </li>
+              <li>
+                <TechBadge text="Web Audio API" />
+              </li>
+            </ul>
+          </div>
+          <Link href="https://tempocontrol.vercel.app" target="_blank">
+            <Image
+              className="rounded hover:drop-shadow-logo-blue"
+              alt="Tempo Control"
+              src="/tempoControl.png"
+              width={900}
+              height={450}
+            />
+          </Link>
         </div>
       </section>
     </main>
