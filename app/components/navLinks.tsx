@@ -21,7 +21,7 @@ export default function NavLinks() {
 			<Link
 				onClick={() => setOpen(false)}
 				className={
-					"underline decoration-logo-blue text-xl font-light hover:underline " +
+					"dark:text-gray-300 text-gray-500 underline decoration-logo-blue text-xl font-light hover:underline hover:-translate-y-1 hover:text-logo-blue " +
 					className
 				}
 				href={href}
@@ -34,10 +34,10 @@ export default function NavLinks() {
 	return (
 		<>
 			<ul className="hidden md:flex gap-10 items-center">
-				<NavLink href="#about" label="About" />
-				<NavLink href="#experience" label="Experience" />
-				<NavLink href="#work" label="Work" />
-				<NavLink href="#contact" label="Contact" />
+				<NavLink href="/#intro" label="Intro" />
+				<NavLink href="/#about" label="About" />
+				<NavLink href="/#work" label="Work" />
+				<NavLink href="/#contact" label="Contact" />
 			</ul>
 			<button
 				onClick={() => setOpen((cur) => !cur)}
@@ -65,10 +65,10 @@ export default function NavLinks() {
 				>
 					<RxCross1 size={30} />
 				</button>
-				<NavLink className="mt-20" href="#about" label="About" />
-				<NavLink href="#experience" label="Experience" />
-				<NavLink href="#work" label="Work" />
-				<NavLink href="#contact" label="Contact" />
+				<NavLink className="mt-20" href="/#intro" label="Intro" />
+				<NavLink href="/#about" label="About" />
+				<NavLink href="/#work" label="Work" />
+				<NavLink href="/#contact" label="Contact" />
 			</ul>
 		</>
 	);

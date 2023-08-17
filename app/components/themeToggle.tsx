@@ -22,14 +22,14 @@ export default function ThemeToggle() {
 
 	return (
 		<button
-			className="bg-black dark:bg-white rounded h-12 w-12 my-auto drop-shadow-logo-blue"
+			className="bg-gray-400 rounded h-12 w-12 my-auto drop-shadow-logo-blue"
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 		>
 			{" "}
 			{theme === "light" ? (
-				<RxMoon className="mx-auto bg-black text-white" size={30} />
+				<RxMoon className="mx-auto" size={30} />
 			) : (
-				<RxSun className="mx-auto bg-white text-black" size={30} />
+				<RxSun className="mx-auto" size={30} />
 			)}
 		</button>
 	);

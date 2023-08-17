@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        short: { raw: "(max-height: 755px)" },
+        xshort: { raw: "(max-height: 655px)" },
+      },
       colors: {
         "black-transparent": "rgba(0, 0, 0, 0.5)",
         "logo-blue": "rgb(66, 180, 248)",
@@ -18,7 +22,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
   darkMode: "class",
 };
 export default config;

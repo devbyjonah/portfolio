@@ -9,6 +9,9 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+import content from "./content";
+const { intro, about, work } = content;
+
 function TechBadge({ text }: { text: string }) {
   return (
     <span className="text-sm md:text-base font-light text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
@@ -45,7 +48,7 @@ function Heading({
 }) {
   return (
     <h1
-      className={`text-2xl md:text-4xl xl:text-6xl font-bold ${darkColor} ${lightColor}`}
+      className={`text-2xl md:text-4xl lg:text-6xl font-bold ${darkColor} ${lightColor}`}
     >
       {title}
     </h1>
@@ -54,7 +57,7 @@ function Heading({
 
 function Paragraph({ text }: { text: string }) {
   return (
-    <p className="text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500">
+    <p className="text-md lg:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500">
       {text}
     </p>
   );
@@ -62,24 +65,21 @@ function Paragraph({ text }: { text: string }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen pt-14">
-      <section className="items-center md:items-start text-center md:text-left min-h-screen w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-6">
+    <main className="flex flex-col">
+      <section className="short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-6">
         <Heading
           darkColor="dark:text-gray-400"
           lightColor="text-gray-600"
-          title="Hi! My name is Jonah Wagner."
+          title={intro.title}
         />
-        <Heading title="I'm a Software Engineer from Sacramento, CA." />
-        <Paragraph
-          text="I utilize a wide range of tools to build unique and accessible digital
-          experiences with a focus on frontend development. I have experience
-          building fullstack and backend solutions with a variety of tech stacks
-          as well."
-        />
+        <Heading title={intro.subtitle} />
+        <Paragraph text={intro.paragraph} />
         <div className="flex flex-col md:flex-row items-center gap-6">
-          <button className="hover:drop-shadow-logo-blue border-2 border-logo-blue border-dashed rounded p-3 max-w-fit hover:bg-logo-blue">
-            <Paragraph text="Check out my resume!" />
-          </button>
+          <Link href="/resume.pdf" target="_blank">
+            <button className="hover:drop-shadow-logo-blue border-2 border-logo-blue border-dashed rounded p-3 max-w-fit hover:bg-logo-blue">
+              <Paragraph text="Check out my resume!" />
+            </button>
+          </Link>
           <div className="flex gap-6">
             <LogoButton href="https://github.com/devbyjonah">
               <PiGithubLogoBold />
@@ -98,37 +98,18 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="pt-24 lg:pt-0 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
+        className="pt-32 lg:pt-0 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
       >
         <div className="lg:w-3/5 flex flex-col gap-6 p-6">
           <Heading title="About me" />
-          <Paragraph
-            text="My programming journey began in middle school, I started a robotics club for my school and wrote simple programs to control motors and
-            other components. This quickly led me to other types of programming and I taught myself C# to make simple
-            games for myself and my friends."
-          />
-          <Paragraph
-            text="In high school my focus changed and I spent most of my time playing
-            instruments, eventually attending the School of Music at CSUS. At the beginning of the pandemic, my work as a music intructor at multiple local high schools fell through and I to changed my focus back to programming
-            by learning Python, Javascript, and React. I quickly fell in love
-            with the field and the community and decided to pursue a career in
-            software engineering."
-          />
-          <Paragraph
-            text="Since then I have been working on growing my knowledge and skills by
-            working on freelance web development and teaching at CodeWizardsHQ,
-            an online coding school for students ages 8-18. In my time there, I
-            have taught a wide range of courses including Web Applications with Python and Flask, DevOps with Git and
-            Github, UI design/development, Relational Databases, and many more."
-          />
+          {about.paragraphs.map((text, ind) => {
+            return <Paragraph key={ind} text={text} />;
+          })}
           <Paragraph text="Here are some of the technologies I'm using currently:" />
-          <ul className="text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue columns-2 md:columns-3">
-            <li>Javascript (ES6+)</li>
-            <li>Typescript</li>
-            <li>React</li>
-            <li>Next</li>
-            <li>Node.js</li>
-            <li>Tailwind</li>
+          <ul className="text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue flex gap-6 flex-wrap">
+            {about.technology.map((tech, ind) => {
+              return <li key={ind}>{tech}</li>;
+            })}
           </ul>
         </div>
         <div className="flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue overflow-hidden">
@@ -137,7 +118,7 @@ export default function Home() {
       </section>
       <section
         id="work"
-        className="min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center p-6 pt-24 md:pt-0"
+        className="pt-32 lg:pt-0 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center p-6"
       >
         <div className="flex flex-col gap-6">
           <Heading
@@ -145,10 +126,8 @@ export default function Home() {
             lightColor="text-gray-700"
             darkColor="text-gray-400"
           />
-          <Heading title="Tempo Control" />
-          <div className="max-w-fit border-2 border-dashed border-logo-blue rounded p-6">
-            <Paragraph text="A web application for musicians to pracice and improve their tempo control using a highly customizable metronome. The app is built using cutting edge features from NextJS 13, makes use of the Web Audio API for precise scheduling of audio events, and integrates the Spotify API to allow users to search for tracks or songs they want to work on." />
-
+          <div className="flex items-center gap-2 md:gap-6">
+            <Heading title="Tempo Control" />
             <Link
               href="https://github.com/devbyjonah/tempocontrol"
               target="_blank"
@@ -164,23 +143,18 @@ export default function Home() {
                 size={60}
               />
             </Link>
+          </div>
+          <div className="max-w-fit border-2 border-dashed border-logo-blue rounded-xl p-6">
+            <Paragraph text={work.featuredProject.description} />
 
             <ul className="mt-2 flex items-center gap-6 flex-wrap">
-              <li>
-                <TechBadge text="Next" />
-              </li>
-              <li>
-                <TechBadge text="React" />
-              </li>
-              <li>
-                <TechBadge text="Typescript" />
-              </li>
-              <li>
-                <TechBadge text="Spotify API" />
-              </li>
-              <li>
-                <TechBadge text="Web Audio API" />
-              </li>
+              {work.featuredProject.techBadges.map((tech, ind) => {
+                return (
+                  <li key={ind}>
+                    <TechBadge text={tech} />
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <Link href="https://tempocontrol.vercel.app" target="_blank">
@@ -193,6 +167,63 @@ export default function Home() {
             />
           </Link>
         </div>
+      </section>
+      <section
+        id="contact"
+        className="pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
+      >
+        <div className="flex flex-col gap-6 mx-auto mb-10">
+          <Heading title="Contact" />
+          <Paragraph text="If you are interested in hiring a creative and driven Software Engineer, get in touch using the form below or connect with me on LinkedIn using the links at the top!" />
+        </div>
+        <form
+          data-netlify="true"
+          action="success"
+          name="contact"
+          method="POST"
+          className="text-gray-600 mx-auto flex max-w-2xl flex-col gap-4 w-full"
+        >
+          <label className="-mb-2 dark:text-gray-300" htmlFor="name">
+            Name:
+          </label>
+          <input
+            id="name"
+            className="border-4 border-logo-blue rounded-lg"
+            type="text"
+            placeholder="Jonah Wagner"
+            required
+          />
+          <label className="-mb-2 dark:text-gray-300" htmlFor="email">
+            Email:
+          </label>
+          <input
+            id="email"
+            className="border-4 border-logo-blue rounded-lg"
+            type="email"
+            placeholder="devbyjonah@gmail.com"
+            required
+          />
+          <label className="-mb-2 dark:text-gray-300" htmlFor="message">
+            Message:
+          </label>
+          <textarea
+            required
+            minLength={10}
+            id="message"
+            className="border-4 border-logo-blue rounded-lg"
+            placeholder="Let's connect!"
+            rows={5}
+          />
+          <input
+            className="mx-auto text-lg w-40 p-2 rounded bg-logo-blue hover:drop-shadow-logo-blue"
+            type="submit"
+          />
+        </form>
+        <footer className="absolute bottom-0 left-0 w-full flex justify-center p-6">
+          <p className="text-logo-blue text-md font-extralight">
+            designed and built by jonah wagner
+          </p>
+        </footer>
       </section>
     </main>
   );
