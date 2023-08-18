@@ -24,6 +24,10 @@ html {
   color: white;
 }
 
+.on-scroll {
+  animation-delay: 250ms;
+}
+
 #blur-overlay {
   backdrop-filter: blur(10px);
   z-index: 1000;

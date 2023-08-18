@@ -92,23 +92,23 @@ export default function Home() {
       <section className="short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-6">
         <Heading
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "500ms" }}
+          style={{ animationDelay: "400ms" }}
           darkColor="dark:text-gray-400"
           lightColor="text-gray-600"
           title={intro.title}
         />
         <Heading
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "600ms" }}
+          style={{ animationDelay: "500ms" }}
           title={intro.subtitle}
         />
         <Paragraph
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "700ms" }}
+          style={{ animationDelay: "600ms" }}
           text={intro.paragraph}
         />
         <div
-          style={{ animationDelay: "800ms" }}
+          style={{ animationDelay: "700ms" }}
           className="opacity-0 on-scroll flex flex-col md:flex-row items-center gap-6"
         >
           <Link href="/resume.pdf" target="_blank">
@@ -137,17 +137,10 @@ export default function Home() {
         className="pt-32 lg:pt-0 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
       >
         <div className="lg:w-3/5 flex flex-col gap-6 p-6">
-          <Heading
-            className="opacity-0 on-scroll"
-            style={{ animationDelay: "300ms" }}
-            title="About me"
-          />
+          <Heading className="opacity-0 on-scroll" title="About me" />
           {about.paragraphs.map((text, ind) => {
             return (
               <Paragraph
-                style={{
-                  animationDelay: "300ms",
-                }}
                 className="opacity-0 on-scroll"
                 key={ind}
                 text={text}
@@ -156,13 +149,9 @@ export default function Home() {
           })}
           <Paragraph
             className="opacity-0 on-scroll"
-            style={{ animationDelay: "300ms" }}
             text="Here are some of the technologies I'm using currently:"
           />
-          <ul
-            style={{ animationDelay: "300ms" }}
-            className="opacity-0 on-scroll text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue flex gap-6 flex-wrap"
-          >
+          <ul className="opacity-0 on-scroll text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue flex gap-6 flex-wrap">
             {about.technology.map((tech, ind) => {
               return <li key={ind}>{tech}</li>;
             })}
@@ -179,15 +168,11 @@ export default function Home() {
         <div className="flex flex-col gap-6">
           <Heading
             className="opacity-0 on-scroll"
-            style={{ animationDelay: "300ms" }}
             title="Featured App"
             lightColor="text-gray-700"
             darkColor="text-gray-400"
           />
-          <div
-            style={{ animationDelay: "300ms" }}
-            className="opacity-0 on-scroll flex items-center gap-2 md:gap-6"
-          >
+          <div className="opacity-0 on-scroll flex items-center gap-2 md:gap-6">
             <Heading title="Tempo Control" />
             <Link
               href="https://github.com/devbyjonah/tempocontrol"
@@ -205,10 +190,7 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div
-            style={{ animationDelay: "300ms" }}
-            className="opacity-0 on-scroll max-w-fit border-2 border-dashed border-logo-blue rounded-xl p-6"
-          >
+          <div className="opacity-0 on-scroll max-w-fit border-2 border-dashed border-logo-blue rounded-xl p-6">
             <Paragraph text={work.featuredProject.description} />
 
             <ul className="mt-2 flex items-center gap-6 flex-wrap">
@@ -223,7 +205,6 @@ export default function Home() {
           </div>
           <Link
             className="opacity-0 on-scroll"
-            style={{ animationDelay: "300ms" }}
             href="https://tempocontrol.vercel.app"
             target="_blank"
           >
@@ -241,15 +222,11 @@ export default function Home() {
         id="contact"
         className="pb-20 pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
       >
-        <div
-          style={{ animationDelay: "300ms" }}
-          className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10"
-        >
+        <div className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10">
           <Heading title="Contact" />
           <Paragraph text="If you are interested in hiring a creative and driven Software Engineer, get in touch using the form below or connect with me on LinkedIn using the links at the top!" />
         </div>
         <form
-          style={{ animationDelay: "300ms" }}
           data-netlify="true"
           action="success"
           name="contact"
