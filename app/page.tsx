@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
+import Observer from "./components/observer";
 import content from "./content";
 const { intro, about, work } = content;
 
@@ -39,25 +40,46 @@ function LogoButton({
 
 function Heading({
   title,
+  className,
+  style,
   lightColor = "text-gray-500",
   darkColor = "dark:text-gray-300",
 }: {
   title: string;
+  className?: string;
+  style?: React.CSSProperties;
   lightColor?: string;
   darkColor?: string;
 }) {
   return (
     <h1
-      className={`text-2xl md:text-4xl lg:text-6xl font-bold ${darkColor} ${lightColor}`}
+      style={style}
+      className={`text-2xl md:text-4xl lg:text-6xl font-bold ${darkColor} ${lightColor} ${
+        className ?? ""
+      }`}
     >
       {title}
     </h1>
   );
 }
 
-function Paragraph({ text }: { text: string }) {
+function Paragraph({
+  text,
+  className,
+  style,
+}: {
+  text: string;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
   return (
-    <p className="text-md lg:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500">
+    <p
+      style={style}
+      className={
+        "text-md lg:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 " +
+          className ?? ""
+      }
+    >
       {text}
     </p>
   );
@@ -66,15 +88,29 @@ function Paragraph({ text }: { text: string }) {
 export default function Home() {
   return (
     <main className="flex flex-col">
+      <Observer />
       <section className="short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-6">
         <Heading
+          className="opacity-0 on-scroll"
+          style={{ animationDelay: "500ms" }}
           darkColor="dark:text-gray-400"
           lightColor="text-gray-600"
           title={intro.title}
         />
-        <Heading title={intro.subtitle} />
-        <Paragraph text={intro.paragraph} />
-        <div className="flex flex-col md:flex-row items-center gap-6">
+        <Heading
+          className="opacity-0 on-scroll"
+          style={{ animationDelay: "600ms" }}
+          title={intro.subtitle}
+        />
+        <Paragraph
+          className="opacity-0 on-scroll"
+          style={{ animationDelay: "700ms" }}
+          text={intro.paragraph}
+        />
+        <div
+          style={{ animationDelay: "800ms" }}
+          className="opacity-0 on-scroll flex flex-col md:flex-row items-center gap-6"
+        >
           <Link href="/resume.pdf" target="_blank">
             <button className="hover:drop-shadow-logo-blue border-2 border-logo-blue border-dashed rounded p-3 max-w-fit hover:bg-logo-blue">
               <Paragraph text="Check out my resume!" />
@@ -101,12 +137,32 @@ export default function Home() {
         className="pt-32 lg:pt-0 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
       >
         <div className="lg:w-3/5 flex flex-col gap-6 p-6">
-          <Heading title="About me" />
+          <Heading
+            className="opacity-0 on-scroll"
+            style={{ animationDelay: "300ms" }}
+            title="About me"
+          />
           {about.paragraphs.map((text, ind) => {
-            return <Paragraph key={ind} text={text} />;
+            return (
+              <Paragraph
+                style={{
+                  animationDelay: "300ms",
+                }}
+                className="opacity-0 on-scroll"
+                key={ind}
+                text={text}
+              />
+            );
           })}
-          <Paragraph text="Here are some of the technologies I'm using currently:" />
-          <ul className="text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue flex gap-6 flex-wrap">
+          <Paragraph
+            className="opacity-0 on-scroll"
+            style={{ animationDelay: "300ms" }}
+            text="Here are some of the technologies I'm using currently:"
+          />
+          <ul
+            style={{ animationDelay: "300ms" }}
+            className="opacity-0 on-scroll text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue flex gap-6 flex-wrap"
+          >
             {about.technology.map((tech, ind) => {
               return <li key={ind}>{tech}</li>;
             })}
@@ -122,11 +178,16 @@ export default function Home() {
       >
         <div className="flex flex-col gap-6">
           <Heading
+            className="opacity-0 on-scroll"
+            style={{ animationDelay: "300ms" }}
             title="Featured App"
             lightColor="text-gray-700"
             darkColor="text-gray-400"
           />
-          <div className="flex items-center gap-2 md:gap-6">
+          <div
+            style={{ animationDelay: "300ms" }}
+            className="opacity-0 on-scroll flex items-center gap-2 md:gap-6"
+          >
             <Heading title="Tempo Control" />
             <Link
               href="https://github.com/devbyjonah/tempocontrol"
@@ -144,7 +205,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div className="max-w-fit border-2 border-dashed border-logo-blue rounded-xl p-6">
+          <div
+            style={{ animationDelay: "300ms" }}
+            className="opacity-0 on-scroll max-w-fit border-2 border-dashed border-logo-blue rounded-xl p-6"
+          >
             <Paragraph text={work.featuredProject.description} />
 
             <ul className="mt-2 flex items-center gap-6 flex-wrap">
@@ -157,7 +221,12 @@ export default function Home() {
               })}
             </ul>
           </div>
-          <Link href="https://tempocontrol.vercel.app" target="_blank">
+          <Link
+            className="opacity-0 on-scroll"
+            style={{ animationDelay: "300ms" }}
+            href="https://tempocontrol.vercel.app"
+            target="_blank"
+          >
             <Image
               className="rounded hover:drop-shadow-logo-blue"
               alt="Tempo Control"
@@ -172,16 +241,20 @@ export default function Home() {
         id="contact"
         className="pb-20 pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
       >
-        <div className="flex flex-col gap-6 mx-auto mb-10">
+        <div
+          style={{ animationDelay: "300ms" }}
+          className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10"
+        >
           <Heading title="Contact" />
           <Paragraph text="If you are interested in hiring a creative and driven Software Engineer, get in touch using the form below or connect with me on LinkedIn using the links at the top!" />
         </div>
         <form
+          style={{ animationDelay: "300ms" }}
           data-netlify="true"
           action="success"
           name="contact"
           method="POST"
-          className="text-gray-600 mx-auto flex max-w-2xl flex-col gap-4 w-full"
+          className="opacity-0 on-scroll text-gray-600 mx-auto flex max-w-2xl flex-col gap-4 w-full"
         >
           <label className="-mb-2 dark:text-gray-300" htmlFor="name">
             Name:

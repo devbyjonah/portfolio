@@ -8,6 +8,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        slidein: "slideIn 0.5s ease-in-out",
+        fadeUp: "fadeUp 0.5s ease-in-out forwards",
+        pulsing: "pulseGlow 2s ease-in-out infinite",
+      },
+      keyframes: {
+        slideIn: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
       screens: {
         short: { raw: "(max-height: 755px)" },
         xshort: { raw: "(max-height: 655px)" },
