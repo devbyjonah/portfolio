@@ -13,7 +13,7 @@ const content = {
       other components. This quickly led me to other types of programming and I taught myself C# to make simple
       games for myself and my friends.`,
       `In high school my focus changed and I spent most of my time playing
-      instruments, eventually attending the School of Music at CSUS. Fast forward to the start of the pandemic, my work as a music intructor at multiple local high schools fell through and I changed my focus back to programming
+      instruments, eventually attending the School of Music at CSUS. Fast forward to the start of the pandemic, my work as a music instructor at multiple local high schools fell through and I changed my focus back to programming
       by learning Python, Javascript, and React. I quickly fell in love
       with the field and the community and decided to pursue a career in
       software engineering.`,
@@ -36,7 +36,7 @@ const content = {
   },
   work: {
     featuredProject: {
-      description: `A web application for musicians to pracice and improve their tempo control using a highly customizable metronome. The app is built using cutting edge features from NextJS 13, makes use of the Web Audio API for precise scheduling of audio events, and integrates the Spotify API to allow users to search for tracks or songs they want to work on.`,
+      description: `A web application for musicians to practice and improve their tempo control using a highly customizable metronome. The app is built using cutting edge features from NextJS 13, makes use of the Web Audio API for precise scheduling of audio events, and integrates the Spotify API to allow users to search for tracks or songs they want to work on.`,
       techBadges: [
         "Next",
         "React",

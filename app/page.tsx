@@ -170,7 +170,7 @@ export default function Home() {
       </section>
       <section
         id="contact"
-        className="pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
+        className="pb-20 pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
       >
         <div className="flex flex-col gap-6 mx-auto mb-10">
           <Heading title="Contact" />
