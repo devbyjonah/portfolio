@@ -4,92 +4,29 @@ import {
   PiTwitterLogoBold,
   PiShareFatFill,
   PiEnvelopeSimple,
+  PiArrowDown,
+  PiSmiley,
 } from "react-icons/pi";
 
 import Image from "next/image";
 import Link from "next/link";
 
+import {
+  Heading,
+  Paragraph,
+  LogoButton,
+  TechBadge,
+} from "./components/elements";
+
 import Observer from "./components/observer";
 import content from "./content";
 const { intro, about, work } = content;
-
-function TechBadge({ text }: { text: string }) {
-  return (
-    <span className="text-sm md:text-base font-light text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
-      {text}
-    </span>
-  );
-}
-
-function LogoButton({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      className="text-logo-blue text-3xl flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue w-12 h-12 hover:bg-logo-blue hover:drop-shadow-logo-blue hover:text-white"
-      href={href}
-    >
-      {children}
-    </a>
-  );
-}
-
-function Heading({
-  title,
-  className,
-  style,
-  lightColor = "text-gray-500",
-  darkColor = "dark:text-gray-300",
-}: {
-  title: string;
-  className?: string;
-  style?: React.CSSProperties;
-  lightColor?: string;
-  darkColor?: string;
-}) {
-  return (
-    <h1
-      style={style}
-      className={`text-2xl md:text-4xl lg:text-6xl font-bold ${darkColor} ${lightColor} ${
-        className ?? ""
-      }`}
-    >
-      {title}
-    </h1>
-  );
-}
-
-function Paragraph({
-  text,
-  className,
-  style,
-}: {
-  text: string;
-  className?: string;
-  style?: React.CSSProperties;
-}) {
-  return (
-    <p
-      style={style}
-      className={
-        "text-md lg:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 " +
-          className ?? ""
-      }
-    >
-      {text}
-    </p>
-  );
-}
 
 export default function Home() {
   return (
     <main className="flex flex-col">
       <Observer />
-      <section className="short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-6">
+      <section className="relative short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
         <Heading
           className="opacity-0 on-scroll"
           style={{ animationDelay: "400ms" }}
@@ -131,10 +68,18 @@ export default function Home() {
             </LogoButton>
           </div>
         </div>
+        <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
+          <Link href="/#about">
+            <PiArrowDown
+              className="opacity-0 on-scroll text-logo-blue border-2 border-dashed border-logo-blue rounded-full"
+              size={30}
+            />
+          </Link>
+        </div>
       </section>
       <section
         id="about"
-        className="pt-32 lg:pt-0 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
+        className="relative pt-32 pb-20 lg:pt-0 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
       >
         <div className="lg:w-3/5 flex flex-col gap-6 p-6">
           <Heading className="opacity-0 on-scroll" title="About me" />
@@ -160,10 +105,18 @@ export default function Home() {
         <div className="flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue overflow-hidden">
           <Image alt="Me!" src="/jonahFinal.png" width={300} height={300} />
         </div>
+        <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
+          <Link href="/#work">
+            <PiArrowDown
+              className="opacity-0 on-scroll text-logo-blue border-2 border-dashed border-logo-blue rounded-full"
+              size={30}
+            />
+          </Link>
+        </div>
       </section>
       <section
         id="work"
-        className="pt-32 lg:pt-0 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center p-6"
+        className="relative pt-32 pb-20 lg:pt-0 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center p-6"
       >
         <div className="flex flex-col gap-6">
           <Heading
@@ -216,11 +169,19 @@ export default function Home() {
               height={450}
             />
           </Link>
+          <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
+            <Link href="/#contact">
+              <PiArrowDown
+                className="opacity-0 on-scroll text-logo-blue border-2 border-dashed border-logo-blue rounded-full"
+                size={30}
+              />
+            </Link>
+          </div>
         </div>
       </section>
       <section
         id="contact"
-        className="pb-20 pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
+        className="pb-24 pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
       >
         <div className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10">
           <Heading title="Contact" />
@@ -270,9 +231,12 @@ export default function Home() {
           />
         </form>
         <footer className="absolute bottom-0 left-0 w-full flex justify-center p-6">
-          <p className="text-logo-blue text-md font-extralight">
-            designed and built by jonah wagner
-          </p>
+          <div className="flex flex-col items-center">
+            <PiSmiley size={30} className="text-logo-blue" />
+            <p className="text-logo-blue text-lg font-extralight">
+              designed and built by jonah wagner
+            </p>
+          </div>
         </footer>
       </section>
     </main>
