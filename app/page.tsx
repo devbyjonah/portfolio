@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Observer />
-      <section className="relative short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
+      <section className="pt-32 relative short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
         <Heading
           className="opacity-0 on-scroll"
           style={{ animationDelay: "400ms" }}
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
       <section
         id="about"
-        className="relative pt-32 pb-20 lg:pt-0 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
+        className="relative pt-32 pb-20 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
       >
         <div className="lg:w-3/5 flex flex-col gap-6 p-6">
           <Heading className="opacity-0 on-scroll" title="About me" />
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
       <section
         id="work"
-        className="relative pt-32 pb-20 lg:pt-0 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center p-6"
+        className="relative pt-32 pb-20 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center"
       >
         <div className="flex flex-col gap-6">
           <Heading
@@ -181,7 +181,7 @@ export default function Home() {
       </section>
       <section
         id="contact"
-        className="pb-24 pt-32 md:pt-0 relative min-h-screen flex flex-col justify-center p-6"
+        className="pb-24 pt-32 relative min-h-screen flex flex-col justify-center p-6"
       >
         <div className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10">
           <Heading title="Contact" />

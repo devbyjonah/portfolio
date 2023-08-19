@@ -43,6 +43,7 @@ const content = {
         "Typescript",
         "Spotify API",
         "Web Audio API",
+        "Google OAuth",
       ],
       imageAlt: "Tempo Control",
       imageSrc: "/tempoControl.png",
