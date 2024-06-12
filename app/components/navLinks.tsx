@@ -21,7 +21,7 @@ export default function NavLinks() {
 			<Link
 				onClick={() => setOpen(false)}
 				className={
-					"dark:text-gray-300 text-gray-500 underline decoration-logo-blue text-xl font-light hover:underline hover:-translate-y-1 hover:text-logo-blue " +
+					"dark:text-gray-300 text-gray-500 decoration-logo-blue text-xl font-light hover:underline hover:-translate-y-1 hover:text-logo-blue " +
 					className
 				}
 				href={href}
@@ -54,9 +54,7 @@ export default function NavLinks() {
 			<ul
 				id="nav-links"
 				className={`md:hidden fixed top-0 right-0 h-full dark:bg-black bg-white w-2/3 flex flex-col gap-10 items-center transition-transform ${
-					open
-						? "transform translate-x-0"
-						: "transform translate-x-full"
+					open ? "transform translate-x-0" : "transform translate-x-full"
 				}`}
 			>
 				<button

@@ -1,6 +1,6 @@
 function TechBadge({ text }: { text: string }) {
   return (
-    <span className="text-sm md:text-base font-light text-gray-500 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
+    <span className="text-sm md:text-base font-light bg-dark-bg/10 dark:bg-light-bg/10 px-2 py-1 rounded-full">
       {text}
     </span>
   );
@@ -15,7 +15,7 @@ function LogoButton({
 }) {
   return (
     <a
-      className="text-logo-blue text-3xl flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue w-12 h-12 hover:bg-logo-blue hover:drop-shadow-logo-blue hover:text-white"
+      className="text-logo-blue text-3xl flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue w-12 h-12 hover:bg-logo-blue hover:drop-shadow-logo-blue hover:text-dark-text"
       href={href}
     >
       {children}

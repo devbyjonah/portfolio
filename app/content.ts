@@ -9,27 +9,18 @@ const content = {
   },
   about: {
     paragraphs: [
-      `My programming journey began in middle school, I started a robotics club for my school and wrote simple programs to control motors and
-      other components. This quickly led me to other types of programming and I taught myself C# to make simple
-      games for myself and my friends.`,
-      `In high school my focus changed and I spent most of my time playing
-      instruments, eventually attending the School of Music at CSUS. Fast forward to the start of the pandemic, my work as a music instructor at multiple local high schools fell through and I changed my focus back to programming
-      by learning Python, Javascript, and React. I quickly fell in love
-      with the field and the community and decided to pursue a career in
-      software engineering.`,
-      `Since then I have been working on growing my knowledge and skills by
-      working on freelance web development and teaching at CodeWizardsHQ,
-      an online coding school for students ages 8-18. In my time there, I
-      have taught a wide range of courses including Web Applications with Python and Flask, DevOps with Git and
-      Github, UI design/development, Relational Databases, and many more.`,
+      "I’m a passionate Front-end Developer with over 5 years of experience creating scalable and dynamic web applications. My most recent work experience is with Kiyo, where I led the development of an MVP web application. In this role, I focused on optimizing performance and accessibility, ensuring a seamless and engaging user experience. I collaborated closely with the team to align project milestones with business goals and translated intricate designs into responsive web pages.",
+      "In addition to my development work, I taught at CodeWizardsHQ, where I instructed a variety of courses ranging from beginner web development to advanced programming topics like game development and Object-Oriented Programming. I managed multiple classes simultaneously, contributing to curriculum refinement and achieving high student engagement and comprehension levels.",
+      "I thrive on delivering intuitive user experiences and am always eager to learn and grow in the ever-evolving field of software development.",
     ],
     technology: [
       "Javascript (ES6+)",
       "Typescript",
       "React",
       "Next",
-      "Node.js",
       "Tailwind",
+      "Redux",
+      "Node.js",
       "MongoDB",
       "PostgreSQL",
     ],

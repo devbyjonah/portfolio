@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
 import { useTheme } from "next-themes";
 import { RxSun, RxMoon } from "react-icons/rx";
 
@@ -18,11 +17,9 @@ export default function ThemeToggle() {
 
 	if (!mounted) return null;
 
-	const sharedClasses = "rounded p-6 cursor-pointer";
-
 	return (
 		<button
-			className="bg-gray-400 rounded h-12 w-12 my-auto drop-shadow-logo-blue"
+			className="bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-all rounded h-12 w-12 my-auto drop-shadow-logo-blue"
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 		>
 			{" "}
