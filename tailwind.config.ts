@@ -28,6 +28,10 @@ const config: Config = {
         xshort: { raw: "(max-height: 655px)" },
       },
       colors: {
+        "light-text": "#0C0A03",
+        "dark-text": "#fcfaf3",
+        "light-bg": "#fbf7ef",
+        "dark-bg": "#100c04",
         "black-transparent": "rgba(0, 0, 0, 0.5)",
         "logo-blue": "rgb(66, 180, 248)",
       },

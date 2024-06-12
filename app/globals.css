@@ -3,25 +3,22 @@
 @tailwind utilities;
 
 :root {
-  /* Your default theme */
-  --background: white;
-  --background-transparent: rgba(255, 255, 255, 0.5);
-  --foreground: black;
+  --background-color: #fbf7ef; /* Light mode background color */
+  --text-color: #0c0a03; /* Light mode text color */
 }
 
-[data-theme="dark"] {
-  --background: black;
-  --background-transparent: rgba(0, 0, 0, 0.5);
-  --foreground: white;
+.dark {
+  --background-color: #100c04; /* Dark mode background color */
+  --text-color: #fcfaf3; /* Dark mode text color */
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 html {
   scroll-behavior: smooth !important;
-}
-
-.dark {
-  background: black;
-  color: white;
 }
 
 .on-scroll {

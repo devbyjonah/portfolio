@@ -2,10 +2,10 @@ import {
   PiGithubLogoBold,
   PiLinkedinLogoBold,
   PiTwitterLogoBold,
-  PiShareFatFill,
   PiEnvelopeSimple,
   PiArrowDown,
   PiSmiley,
+  PiShareFatBold,
 } from "react-icons/pi";
 
 import Image from "next/image";
@@ -26,34 +26,31 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Observer />
-      <section className="pt-32 relative short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
+      <section className="pt-24 relative short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
         <Heading
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "400ms" }}
+          style={{ animationDelay: "200ms" }}
           darkColor="dark:text-gray-400"
           lightColor="text-gray-600"
           title={intro.title}
         />
         <Heading
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "500ms" }}
+          style={{ animationDelay: "300ms" }}
           title={intro.subtitle}
         />
         <Paragraph
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "600ms" }}
+          style={{ animationDelay: "400ms" }}
           text={intro.paragraph}
         />
-        <div
-          style={{ animationDelay: "700ms" }}
-          className="opacity-0 on-scroll flex flex-col md:flex-row items-center gap-6"
-        >
+        <div className="opacity-0 on-scroll flex flex-col md:flex-row items-center gap-6">
           <Link href="/resume.pdf" target="_blank">
-            <button className="hover:drop-shadow-logo-blue border-2 border-logo-blue border-dashed rounded p-3 max-w-fit hover:bg-logo-blue">
-              <Paragraph text="Check out my resume!" />
+            <button className="my-4 md:my-0 drop-shadow-logo-blue text-xl font-bold text-dark-text border-2 rounded-2xl p-3 max-w-fit bg-logo-blue">
+              Check out my resume!
             </button>
           </Link>
-          <div className="flex gap-6">
+          <div className="md:pl-4 flex gap-6">
             <LogoButton href="https://github.com/devbyjonah">
               <PiGithubLogoBold />
             </LogoButton>
@@ -102,7 +99,7 @@ export default function Home() {
             })}
           </ul>
         </div>
-        <div className="flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue overflow-hidden">
+        <div className="flex justify-center items-center rounded-full border-2 border-logo-blue overflow-hidden">
           <Image alt="Me!" src="/jonahFinal.png" width={300} height={300} />
         </div>
         <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
@@ -116,37 +113,42 @@ export default function Home() {
       </section>
       <section
         id="work"
-        className="relative pt-32 pb-20 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center"
+        className="relative px-4 pt-32 pb-20 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center"
       >
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2 md:gap-6">
           <Heading
-            className="opacity-0 on-scroll"
+            className="text-2xl opacity-0 on-scroll"
             title="Featured App"
             lightColor="text-gray-700"
             darkColor="text-gray-400"
           />
           <div className="opacity-0 on-scroll flex items-center gap-2 md:gap-6">
-            <Heading title="Tempo Control" />
+            <Heading className="text-2xl" title="Tempo Control" />
             <Link
+              className="rounded-full border"
               href="https://github.com/devbyjonah/tempocontrol"
               target="_blank"
             >
               <PiGithubLogoBold
                 className="inline-block hover:bg-logo-blue hover:drop-shadow-logo-blue rounded-full p-2"
-                size={60}
+                size={45}
               />
             </Link>
-            <Link href="https://tempocontrol.vercel.app" target="_blank">
-              <PiShareFatFill
+            <Link
+              className="rounded-full border"
+              href="https://tempocontrol.vercel.app"
+              target="_blank"
+            >
+              <PiShareFatBold
                 className="inline-block hover:bg-logo-blue hover:drop-shadow-logo-blue rounded-full p-2"
-                size={60}
+                size={45}
               />
             </Link>
           </div>
           <div className="opacity-0 on-scroll max-w-fit border-2 border-dashed border-logo-blue rounded-xl p-6">
             <Paragraph text={work.featuredProject.description} />
 
-            <ul className="mt-2 flex items-center gap-6 flex-wrap">
+            <ul className="pt-4 flex items-center gap-6 flex-wrap">
               {work.featuredProject.techBadges.map((tech, ind) => {
                 return (
                   <li key={ind}>
@@ -181,7 +183,7 @@ export default function Home() {
       </section>
       <section
         id="contact"
-        className="pb-24 pt-32 relative min-h-screen flex flex-col justify-center p-6"
+        className="px-6 py-32 md:px-0 relative min-h-screen flex flex-col justify-center"
       >
         <div className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10">
           <Heading title="Contact" />
