@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
-import Header from "./components/header";
-import Providers from "./Providers";
+import Header from "../src/components/header";
+import Providers from "../src/components/Providers";
 
 export const metadata: Metadata = {
   title: "Jonah Wagner | Software Engineer",
