@@ -6,6 +6,7 @@ import {
   PiArrowDown,
   PiSmiley,
   PiShareFatBold,
+  PiEnvelopeBold,
 } from "react-icons/pi";
 
 import Image from "next/image";
@@ -47,7 +48,7 @@ export default function Home() {
           className="opacity-0 on-scroll flex flex-col sm:flex-row items-center gap-6"
         >
           <Link className="flex-shrink-0" href="/resume.pdf" target="_blank">
-            <button className="animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl p-3 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg">
+            <button className="animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl px-6 h-16 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg">
               Check out my resume!
             </button>
           </Link>
@@ -62,7 +63,7 @@ export default function Home() {
               <PiTwitterLogoBold />
             </LogoButton>
             <LogoButton href="mailto:devbyjonah@gmail.com">
-              <PiEnvelopeSimple />
+              <PiEnvelopeBold />
             </LogoButton>
           </div>
         </div>

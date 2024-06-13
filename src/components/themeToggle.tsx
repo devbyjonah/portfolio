@@ -23,11 +23,8 @@ export default function ThemeToggle() {
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 		>
 			<div>
-				{theme === "light" ? (
-					<RxMoon className="" size={35} />
-				) : (
-					<RxSun className="" size={35} />
-				)}
+				<RxMoon className="hidden dark:block" size={35} />
+				<RxSun className="dark:hidden" size={35} />
 			</div>
 		</button>
 	);
