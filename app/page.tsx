@@ -114,35 +114,31 @@ export default function Home() {
       </section>
       <section
         id="work"
-        className="relative px-4 pt-32 pb-20 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center"
+        className="relative px-4 sm:px-8 pt-32 pb-20 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center"
       >
         <div className="flex flex-col gap-2 md:gap-6">
           <Heading
-            className="text-2xl opacity-0 on-scroll text-light-text/70 dark:text-dark-text/70"
+            className="opacity-0 on-scroll text-light-text/70 dark:text-dark-text/70"
             title="Featured App"
           />
-          <div className="opacity-0 on-scroll flex items-center gap-2 md:gap-6">
-            <Heading className="text-2xl" title="Tempo Control" />
-            <Link
-              className="rounded-2xl border"
-              href="https://github.com/devbyjonah/tempocontrol"
-              target="_blank"
-            >
-              <PiGithubLogoBold
-                className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2"
-                size={45}
-              />
-            </Link>
-            <Link
-              className="rounded-2xl border"
-              href="https://tempocontrol.vercel.app"
-              target="_blank"
-            >
-              <PiShareFatBold
-                className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2"
-                size={45}
-              />
-            </Link>
+          <div className="pb-4 max-w-[45rem] opacity-0 on-scroll flex items-center sm:items-stretch justify-between gap-4 flex-wrap">
+            <Heading className="flex-shrink-0" title="Tempo Control" />
+            <div className="sm:pb-0 flex items-center sm:items-stretch gap-4">
+              <Link
+                className="rounded-2xl"
+                href="https://github.com/devbyjonah/tempocontrol"
+                target="_blank"
+              >
+                <PiGithubLogoBold className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
+              </Link>
+              <Link
+                className="rounded-2xl"
+                href="https://tempocontrol.vercel.app"
+                target="_blank"
+              >
+                <PiShareFatBold className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
+              </Link>
+            </div>
           </div>
           <div className="opacity-0 on-scroll bg-gradient-to-tr from-light-bg dark:from-dark-bg to-logo-blue/30 dark:to-logo-blue/40 max-w-fit border-2 border-logo-blue rounded-xl p-6">
             <Paragraph text={work.featuredProject.description} />
