@@ -6,7 +6,7 @@ const config: Config = {
     extend: {
       animation: {
         slidein: "slideIn 0.5s ease-in-out",
-        fadeUp: "fadeUp 0.5s ease-in-out forwards",
+        fadeUp: "fadeUp 0.3s ease-in-out forwards",
         pulsing: "pulseGlow 2s ease-in-out infinite",
         pulseShadow: "pulseShadow 2s ease-in-out infinite", // Added pulseShadow animation
       },
@@ -41,7 +41,7 @@ const config: Config = {
         "logo-blue": "rgb(66, 180, 248)",
       },
       dropShadow: {
-        "logo-blue": "0px 0px 1px rgba(66, 144, 248, 1)",
+        "logo-blue": "0px 0px 10px rgba(66, 144, 248, 1)",
         gray: "0px 5px 20px rgba(50, 50, 50, 1)",
       },
     },

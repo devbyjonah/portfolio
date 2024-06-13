@@ -19,15 +19,16 @@ export default function ThemeToggle() {
 
 	return (
 		<button
-			className="bg-logo-blue text-dark-text transition-all rounded h-12 w-12 my-auto animate-pulseShadow"
+			className="hover:scale-105 transition text-light-text/80 text-3xl flex justify-center items-center rounded-2xl w-12 h-12 bg-gradient-to-tr p-8 to-dark-text from-logo-blue drop-shadow-logo-blue"
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
 		>
-			{" "}
-			{theme === "light" ? (
-				<RxMoon className="mx-auto" size={30} />
-			) : (
-				<RxSun className="mx-auto" size={30} />
-			)}
+			<div>
+				{theme === "light" ? (
+					<RxMoon className="" size={35} />
+				) : (
+					<RxSun className="" size={35} />
+				)}
+			</div>
 		</button>
 	);
 }

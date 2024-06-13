@@ -15,7 +15,7 @@ function LogoButton({
 }) {
   return (
     <a
-      className="text-logo-blue text-3xl flex justify-center items-center rounded-full border-2 border-logo-blue w-12 h-12 hover:bg-logo-blue hover:animate-pulseShadow hover:text-dark-text"
+      className="text-3xl flex justify-center items-center rounded-2xl border-2 w-12 h-12 border-logo-blue text-logo-blue hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow hover:text-dark-text"
       href={href}
     >
       {children}
@@ -27,19 +27,15 @@ function Heading({
   title,
   className,
   style,
-  lightColor = "text-gray-500",
-  darkColor = "dark:text-gray-300",
 }: {
   title: string;
   className?: string;
   style?: React.CSSProperties;
-  lightColor?: string;
-  darkColor?: string;
 }) {
   return (
     <h1
       style={style}
-      className={`text-3xl sm:text-4xl lg:text-6xl font-bold ${darkColor} ${lightColor} ${
+      className={`text-3xl sm:text-4xl lg:text-6xl font-bold ${
         className ?? ""
       }`}
     >

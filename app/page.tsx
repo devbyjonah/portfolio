@@ -29,25 +29,25 @@ export default function Home() {
       <section className="pt-24 relative short:mt-16 xshort:mt-32 min-h-screen md:items-start text-center sm:text-left w-full sm:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
         <Heading
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "200ms" }}
-          darkColor="dark:text-gray-300"
-          lightColor="text-gray-600"
+          style={{ animationDelay: "200ms", animationDuration: "650ms" }}
           title={intro.title}
         />
         <Heading
-          className="opacity-0 on-scroll"
-          darkColor="dark:text-gray-400"
-          style={{ animationDelay: "300ms" }}
+          className="opacity-0 on-scroll text-light-text/70 dark:text-dark-text/70"
+          style={{ animationDelay: "300ms", animationDuration: "650ms" }}
           title={intro.subtitle}
         />
         <Paragraph
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "400ms" }}
+          style={{ animationDelay: "400ms", animationDuration: "650ms" }}
           text={intro.paragraph}
         />
-        <div className="opacity-0 on-scroll flex flex-col sm:flex-row items-center gap-6">
+        <div
+          style={{ animationDelay: "500ms", animationDuration: "650ms" }}
+          className="opacity-0 on-scroll flex flex-col sm:flex-row items-center gap-6"
+        >
           <Link className="flex-shrink-0" href="/resume.pdf" target="_blank">
-            <button className="animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl p-3 max-w-fit bg-gradient-to-tr to-logo-blue text-light-text/80 from-light-bg">
+            <button className="animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl p-3 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg">
               Check out my resume!
             </button>
           </Link>
@@ -69,7 +69,7 @@ export default function Home() {
         <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
           <Link href="/#about">
             <PiArrowDown
-              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-full"
+              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
               size={30}
             />
           </Link>
@@ -100,13 +100,13 @@ export default function Home() {
             })}
           </ul>
         </div>
-        <div className="flex justify-center items-center rounded-full border-2 border-logo-blue overflow-hidden">
+        <div className="flex justify-center items-center rounded-2xl border-2 border-logo-blue animate-pulseShadow overflow-hidden">
           <Image alt="Me!" src="/jonahFinal.png" width={300} height={300} />
         </div>
         <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
           <Link href="/#work">
             <PiArrowDown
-              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-full"
+              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
               size={30}
             />
           </Link>
@@ -118,30 +118,28 @@ export default function Home() {
       >
         <div className="flex flex-col gap-2 md:gap-6">
           <Heading
-            className="text-2xl opacity-0 on-scroll"
+            className="text-2xl opacity-0 on-scroll text-light-text/70 dark:text-dark-text/70"
             title="Featured App"
-            lightColor="text-gray-700"
-            darkColor="text-gray-400"
           />
           <div className="opacity-0 on-scroll flex items-center gap-2 md:gap-6">
             <Heading className="text-2xl" title="Tempo Control" />
             <Link
-              className="rounded-full border"
+              className="rounded-2xl border"
               href="https://github.com/devbyjonah/tempocontrol"
               target="_blank"
             >
               <PiGithubLogoBold
-                className="inline-block border border-gray-500 text-gray-500 dark:border-gray-300 dark:text-gray-300 hover:text-logo-blue hover:border-logo-blue dark:hover:text-logo-blue dark:hover:border-logo-blue rounded-full p-2"
+                className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2"
                 size={45}
               />
             </Link>
             <Link
-              className="rounded-full border"
+              className="rounded-2xl border"
               href="https://tempocontrol.vercel.app"
               target="_blank"
             >
               <PiShareFatBold
-                className="inline-block border border-gray-500 text-gray-500 dark:border-gray-300 dark:text-gray-300 hover:text-logo-blue hover:border-logo-blue dark:hover:text-logo-blue dark:hover:border-logo-blue rounded-full p-2"
+                className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2"
                 size={45}
               />
             </Link>
@@ -165,7 +163,7 @@ export default function Home() {
             target="_blank"
           >
             <Image
-              className="rounded hover:drop-shadow-logo-blue"
+              className="rounded-2xl animate-pulseShadow hover:scale-105 transition"
               alt="Tempo Control"
               src="/tempoControl.png"
               width={900}
@@ -175,7 +173,7 @@ export default function Home() {
           <div className="animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
             <Link href="/#contact">
               <PiArrowDown
-                className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-full"
+                className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
                 size={30}
               />
             </Link>
@@ -202,7 +200,7 @@ export default function Home() {
           </label>
           <input
             id="name"
-            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-lg"
+            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-2xl"
             type="text"
             placeholder="Jonah Wagner"
             required
@@ -212,7 +210,7 @@ export default function Home() {
           </label>
           <input
             id="email"
-            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-lg"
+            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-2xl"
             type="email"
             placeholder="devbyjonah@gmail.com"
             required
@@ -224,12 +222,12 @@ export default function Home() {
             required
             minLength={10}
             id="message"
-            className="border-4 border-logo-blue/50 focus:border-logo-blue rounded-lg"
+            className="border-4 border-logo-blue/50 focus:border-logo-blue rounded-2xl"
             placeholder="Let's connect!"
             rows={5}
           />
           <input
-            className="mx-auto text-lg w-40 p-2 rounded-2xl text-dark-text bg-logo-blue cursor-pointer"
+            className="mx-auto px-12 animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl p-3 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg"
             type="submit"
           />
         </form>
