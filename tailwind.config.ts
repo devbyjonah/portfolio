@@ -8,6 +8,7 @@ const config: Config = {
         slidein: "slideIn 0.5s ease-in-out",
         fadeUp: "fadeUp 0.5s ease-in-out forwards",
         pulsing: "pulseGlow 2s ease-in-out infinite",
+        pulseShadow: "pulseShadow 2s ease-in-out infinite", // Added pulseShadow animation
       },
       keyframes: {
         slideIn: {
@@ -17,6 +18,14 @@ const config: Config = {
         fadeUp: {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        pulseShadow: {
+          "0%, 100%": {
+            boxShadow: "0px 5px 25px rgba(66, 144, 248, 1)",
+          },
+          "50%": {
+            boxShadow: "0px 5px 25px rgba(66, 144, 248, 0.5)",
+          },
         },
       },
       screens: {
@@ -32,7 +41,7 @@ const config: Config = {
         "logo-blue": "rgb(66, 180, 248)",
       },
       dropShadow: {
-        "logo-blue": "0px 5px 25px rgba(66, 144, 248, 1)",
+        "logo-blue": "0px 0px 1px rgba(66, 144, 248, 1)",
         gray: "0px 5px 20px rgba(50, 50, 50, 1)",
       },
     },

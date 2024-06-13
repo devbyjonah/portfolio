@@ -16,10 +16,10 @@ import {
   Paragraph,
   LogoButton,
   TechBadge,
-} from "../src/components/elements";
+} from "@/src/components/elements";
 
-import Observer from "../src/components/observer";
-import content from "../src/utils/content";
+import Observer from "@/src/components/observer";
+import content from "@/src/utils/content";
 const { intro, about, work } = content;
 
 export default function Home() {
@@ -30,12 +30,13 @@ export default function Home() {
         <Heading
           className="opacity-0 on-scroll"
           style={{ animationDelay: "200ms" }}
-          darkColor="dark:text-gray-400"
+          darkColor="dark:text-gray-300"
           lightColor="text-gray-600"
           title={intro.title}
         />
         <Heading
           className="opacity-0 on-scroll"
+          darkColor="dark:text-gray-400"
           style={{ animationDelay: "300ms" }}
           title={intro.subtitle}
         />
@@ -46,7 +47,7 @@ export default function Home() {
         />
         <div className="opacity-0 on-scroll flex flex-col sm:flex-row items-center gap-6">
           <Link className="flex-shrink-0" href="/resume.pdf" target="_blank">
-            <button className="my-4 md:my-0 drop-shadow-logo-blue text-xl font-bold text-dark-text border-2 rounded-2xl p-3 max-w-fit bg-logo-blue">
+            <button className="animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl p-3 max-w-fit bg-gradient-to-tr to-logo-blue text-light-text/80 from-light-bg">
               Check out my resume!
             </button>
           </Link>
@@ -68,7 +69,7 @@ export default function Home() {
         <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
           <Link href="/#about">
             <PiArrowDown
-              className="opacity-0 on-scroll text-logo-blue border-2 border-dashed border-logo-blue rounded-full"
+              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-full"
               size={30}
             />
           </Link>
@@ -105,7 +106,7 @@ export default function Home() {
         <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
           <Link href="/#work">
             <PiArrowDown
-              className="opacity-0 on-scroll text-logo-blue border-2 border-dashed border-logo-blue rounded-full"
+              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-full"
               size={30}
             />
           </Link>
@@ -130,7 +131,7 @@ export default function Home() {
               target="_blank"
             >
               <PiGithubLogoBold
-                className="inline-block hover:bg-logo-blue hover:drop-shadow-logo-blue rounded-full p-2"
+                className="inline-block border border-gray-500 text-gray-500 dark:border-gray-300 dark:text-gray-300 hover:text-logo-blue hover:border-logo-blue dark:hover:text-logo-blue dark:hover:border-logo-blue rounded-full p-2"
                 size={45}
               />
             </Link>
@@ -140,12 +141,12 @@ export default function Home() {
               target="_blank"
             >
               <PiShareFatBold
-                className="inline-block hover:bg-logo-blue hover:drop-shadow-logo-blue rounded-full p-2"
+                className="inline-block border border-gray-500 text-gray-500 dark:border-gray-300 dark:text-gray-300 hover:text-logo-blue hover:border-logo-blue dark:hover:text-logo-blue dark:hover:border-logo-blue rounded-full p-2"
                 size={45}
               />
             </Link>
           </div>
-          <div className="opacity-0 on-scroll max-w-fit border-2 border-dashed border-logo-blue rounded-xl p-6">
+          <div className="opacity-0 on-scroll bg-gradient-to-tr from-light-bg dark:from-dark-bg to-logo-blue/30 dark:to-logo-blue/40 max-w-fit border-2 border-logo-blue rounded-xl p-6">
             <Paragraph text={work.featuredProject.description} />
 
             <ul className="pt-4 flex items-center gap-6 flex-wrap">
@@ -174,7 +175,7 @@ export default function Home() {
           <div className="animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
             <Link href="/#contact">
               <PiArrowDown
-                className="opacity-0 on-scroll text-logo-blue border-2 border-dashed border-logo-blue rounded-full"
+                className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-full"
                 size={30}
               />
             </Link>
@@ -201,7 +202,7 @@ export default function Home() {
           </label>
           <input
             id="name"
-            className="border-4 border-logo-blue rounded-lg"
+            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-lg"
             type="text"
             placeholder="Jonah Wagner"
             required
@@ -211,7 +212,7 @@ export default function Home() {
           </label>
           <input
             id="email"
-            className="border-4 border-logo-blue rounded-lg"
+            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-lg"
             type="email"
             placeholder="devbyjonah@gmail.com"
             required
@@ -223,21 +224,21 @@ export default function Home() {
             required
             minLength={10}
             id="message"
-            className="border-4 border-logo-blue rounded-lg"
+            className="border-4 border-logo-blue/50 focus:border-logo-blue rounded-lg"
             placeholder="Let's connect!"
             rows={5}
           />
           <input
-            className="mx-auto text-lg w-40 p-2 rounded bg-logo-blue hover:drop-shadow-logo-blue"
+            className="mx-auto text-lg w-40 p-2 rounded-2xl text-dark-text bg-logo-blue cursor-pointer"
             type="submit"
           />
         </form>
         <footer className="absolute bottom-0 left-0 w-full flex justify-center p-6">
-          <div className="flex flex-col items-center">
-            <PiSmiley size={30} className="text-logo-blue" />
+          <div className="flex">
             <p className="text-logo-blue text-lg font-extralight">
               designed and built by jonah wagner
             </p>
+            <PiSmiley size={30} className="ml-2 text-logo-blue" />
           </div>
         </footer>
       </section>

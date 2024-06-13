@@ -15,7 +15,7 @@ function LogoButton({
 }) {
   return (
     <a
-      className="text-logo-blue text-3xl flex justify-center items-center rounded-full border-2 border-dashed border-logo-blue w-12 h-12 hover:bg-logo-blue hover:drop-shadow-logo-blue hover:text-dark-text"
+      className="text-logo-blue text-3xl flex justify-center items-center rounded-full border-2 border-logo-blue w-12 h-12 hover:bg-logo-blue hover:animate-pulseShadow hover:text-dark-text"
       href={href}
     >
       {children}

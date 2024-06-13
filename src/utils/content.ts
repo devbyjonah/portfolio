@@ -2,10 +2,7 @@ const content = {
   intro: {
     title: "Hi! My name is Jonah\u00A0Wagner.",
     subtitle: "I'm a Software Engineer from Sacramento,\u00A0CA.",
-    paragraph: `I utilize a wide range of tools to build unique and accessible digital
-      experiences with a focus on frontend development. I have experience
-      building fullstack and backend solutions with a variety of tech stacks
-      as\u00A0well.`,
+    paragraph: `I specialize in creating unique and accessible digital experiences, focusing primarily on frontend development using React, TypeScript, and Next.js. My goal is to deliver high-quality, user-friendly interfaces that enhance user experiences.`,
   },
   about: {
     paragraphs: [
