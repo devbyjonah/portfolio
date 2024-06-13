@@ -16,10 +16,10 @@ import {
   Paragraph,
   LogoButton,
   TechBadge,
-} from "./components/elements";
+} from "../src/components/elements";
 
-import Observer from "./components/observer";
-import content from "./content";
+import Observer from "../src/components/observer";
+import content from "../src/util/content";
 const { intro, about, work } = content;
 
 export default function Home() {
