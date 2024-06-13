@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Observer />
-      <section className="pt-24 relative short:mt-16 xshort:mt-32 min-h-screen md:items-start md:text-left w-full md:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
+      <section className="pt-24 relative short:mt-16 xshort:mt-32 min-h-screen md:items-start text-center sm:text-left w-full sm:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
         <Heading
           className="opacity-0 on-scroll"
           style={{ animationDelay: "200ms" }}
@@ -44,8 +44,8 @@ export default function Home() {
           style={{ animationDelay: "400ms" }}
           text={intro.paragraph}
         />
-        <div className="opacity-0 on-scroll flex flex-col md:flex-row items-center gap-6">
-          <Link href="/resume.pdf" target="_blank">
+        <div className="opacity-0 on-scroll flex flex-col sm:flex-row items-center gap-6">
+          <Link className="flex-shrink-0" href="/resume.pdf" target="_blank">
             <button className="my-4 md:my-0 drop-shadow-logo-blue text-xl font-bold text-dark-text border-2 rounded-2xl p-3 max-w-fit bg-logo-blue">
               Check out my resume!
             </button>
@@ -171,7 +171,7 @@ export default function Home() {
               height={450}
             />
           </Link>
-          <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
+          <div className="animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
             <Link href="/#contact">
               <PiArrowDown
                 className="opacity-0 on-scroll text-logo-blue border-2 border-dashed border-logo-blue rounded-full"

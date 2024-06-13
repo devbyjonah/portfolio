@@ -39,7 +39,7 @@ function Heading({
   return (
     <h1
       style={style}
-      className={`text-2xl md:text-4xl lg:text-6xl font-bold ${darkColor} ${lightColor} ${
+      className={`text-3xl sm:text-4xl lg:text-6xl font-bold ${darkColor} ${lightColor} ${
         className ?? ""
       }`}
     >
