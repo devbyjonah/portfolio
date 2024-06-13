@@ -8,7 +8,6 @@ const content = {
     paragraphs: [
       "I’m a passionate Front-end Developer with over 5 years of experience creating scalable and dynamic web applications. My most recent work experience is with Kiyo, where I led the development of an MVP web application. In this role, I focused on optimizing performance and accessibility, ensuring a seamless and engaging user experience. I collaborated closely with the team to align project milestones with business goals and translated intricate designs into responsive web pages.",
       "In addition to my development work, I taught at CodeWizardsHQ, where I instructed a variety of courses ranging from beginner web development to advanced programming topics like game development and Object-Oriented Programming. I managed multiple classes simultaneously, contributing to curriculum refinement and achieving high student engagement and comprehension levels.",
-      "I thrive on delivering intuitive user experiences and am always eager to learn and grow in the ever-evolving field of software development.",
     ],
     technology: [
       "Javascript (ES6+)",

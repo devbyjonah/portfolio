@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Observer />
-      <section className="pt-24 relative short:mt-16 xshort:mt-32 min-h-screen md:items-start text-center sm:text-left w-full sm:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto pb-20 px-6">
+      <section className="py-28 relative min-h-screen md:items-start text-center sm:text-left w-full sm:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-6">
         <Heading
           className="opacity-0 on-scroll"
           style={{ animationDelay: "200ms", animationDuration: "650ms" }}
