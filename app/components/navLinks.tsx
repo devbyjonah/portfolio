@@ -21,7 +21,7 @@ export default function NavLinks() {
 			<Link
 				onClick={() => setOpen(false)}
 				className={
-					"dark:text-gray-300 text-gray-500 decoration-logo-blue text-xl font-light hover:underline hover:-translate-y-1 hover:text-logo-blue " +
+					" decoration-logo-blue text-xl font-light hover:underline hover:text-logo-blue " +
 					className
 				}
 				href={href}
