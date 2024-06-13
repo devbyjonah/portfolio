@@ -232,12 +232,13 @@ export default function Home() {
           />
         </form>
         <footer className="absolute bottom-0 left-0 w-full flex justify-center p-6">
-          <div className="flex">
-            <p className="text-logo-blue text-lg font-extralight">
-              designed and built by jonah wagner
-            </p>
-            <PiSmiley size={30} className="ml-2 text-logo-blue" />
-          </div>
+          <p className="text-logo-blue text-center text-lg font-extralight">
+            designed and built by{" "}
+            <span className="whitespace-nowrap">
+              jonah wagner
+              <PiSmiley size={30} className="inline ml-2 text-logo-blue" />
+            </span>
+          </p>
         </footer>
       </section>
     </main>
