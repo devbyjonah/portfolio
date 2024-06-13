@@ -2,7 +2,6 @@ import {
   PiGithubLogoBold,
   PiLinkedinLogoBold,
   PiTwitterLogoBold,
-  PiEnvelopeSimple,
   PiArrowDown,
   PiSmiley,
   PiShareFatBold,
@@ -117,65 +116,79 @@ export default function Home() {
         id="work"
         className="relative px-4 sm:px-8 pt-32 pb-20 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center"
       >
-        <div className="flex flex-col gap-2 md:gap-6">
-          <Heading
-            className="opacity-0 on-scroll text-light-text/70 dark:text-dark-text/70"
-            title="Featured App"
-          />
-          <div className="pb-4 max-w-[45rem] opacity-0 on-scroll flex items-center sm:items-stretch justify-between gap-4 flex-wrap">
-            <Heading className="flex-shrink-0" title="Tempo Control" />
-            <div className="sm:pb-0 flex items-center sm:items-stretch gap-4">
-              <Link
-                className="rounded-2xl"
-                href="https://github.com/devbyjonah/tempocontrol"
-                target="_blank"
-              >
-                <PiGithubLogoBold className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
-              </Link>
-              <Link
-                className="rounded-2xl"
-                href="https://tempocontrol.vercel.app"
-                target="_blank"
-              >
-                <PiShareFatBold className="inline-block border border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
+        <Heading
+          className="opacity-0 on-scroll text-light-text/70 dark:text-dark-text/70 pb-8"
+          title="Featured Apps"
+        />
+        {work.projects.map((project, ind) => (
+          <div
+            key={project.title}
+            className={
+              "flex flex-col gap-2 md:gap-6 pb-16 sm:pb-32 " +
+              (ind % 2 !== 0 ? "items-end" : "")
+            }
+          >
+            <div className="pb-4 max-w-[45rem] opacity-0 on-scroll flex items-center sm:items-center gap-4 flex-wrap">
+              <Heading className="flex-shrink-0" title={project.title} />
+              <div className="sm:pb-0 flex items-center justify-end sm:items-stretch gap-4">
+                {project.githubURL && (
+                  <Link
+                    className="rounded-2xl"
+                    href={project.githubURL}
+                    target="_blank"
+                  >
+                    <PiGithubLogoBold className="inline-block border-2 border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
+                  </Link>
+                )}
+                <Link
+                  className="rounded-2xl"
+                  href={project.liveURL}
+                  target="_blank"
+                >
+                  <PiShareFatBold className="inline-block border-2 border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
+                </Link>
+              </div>
+            </div>
+            <div
+              className={`max-w-[45rem] opacity-0 on-scroll ${
+                ind % 2 === 0 ? "bg-gradient-to-tr" : "bg-gradient-to-bl"
+              } from-light-bg dark:from-dark-bg to-logo-blue/30 dark:to-logo-blue/40 border-2 border-logo-blue rounded-xl p-6`}
+            >
+              <Paragraph text={project.description} />
+
+              <ul className="pt-4 flex items-center gap-6 flex-wrap">
+                {project.techBadges.map((tech, ind) => {
+                  return (
+                    <li key={ind}>
+                      <TechBadge text={tech} />
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <Link
+              className="opacity-0 on-scroll"
+              href={project.liveURL}
+              target="_blank"
+            >
+              <Image
+                className="w-full rounded-2xl animate-pulseShadow hover:scale-105 transition"
+                alt={project.title}
+                src={project.imageSrc}
+                width={900}
+                height={450}
+              />
+            </Link>
+            <div className="animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
+              <Link href="/#contact">
+                <PiArrowDown
+                  className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
+                  size={30}
+                />
               </Link>
             </div>
           </div>
-          <div className="opacity-0 on-scroll bg-gradient-to-tr from-light-bg dark:from-dark-bg to-logo-blue/30 dark:to-logo-blue/40 max-w-fit border-2 border-logo-blue rounded-xl p-6">
-            <Paragraph text={work.featuredProject.description} />
-
-            <ul className="pt-4 flex items-center gap-6 flex-wrap">
-              {work.featuredProject.techBadges.map((tech, ind) => {
-                return (
-                  <li key={ind}>
-                    <TechBadge text={tech} />
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <Link
-            className="opacity-0 on-scroll"
-            href="https://tempocontrol.vercel.app"
-            target="_blank"
-          >
-            <Image
-              className="rounded-2xl animate-pulseShadow hover:scale-105 transition"
-              alt="Tempo Control"
-              src="/tempoControl.png"
-              width={900}
-              height={450}
-            />
-          </Link>
-          <div className="animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
-            <Link href="/#contact">
-              <PiArrowDown
-                className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
-                size={30}
-              />
-            </Link>
-          </div>
-        </div>
+        ))}
       </section>
       <section
         id="contact"
