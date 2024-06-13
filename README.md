@@ -4,6 +4,8 @@ A simple website to share my contact info, provide samples of my work, and share
 
 **Link to project:** https://www.jonahwagner.com
 
+![screenshot](public/readme.png)
+
 ## How It's Made:
 
 **Tech used:** React, Next, Typescript, TailwindCSS, Vercel
