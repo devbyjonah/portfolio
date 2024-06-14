@@ -2,7 +2,7 @@ const content = {
   intro: {
     title: "Hi! My name is Jonah\u00A0Wagner.",
     subtitle: "I'm a Software Engineer from Sacramento,\u00A0CA.",
-    paragraph: `I specialize in creating unique and accessible digital experiences, focusing primarily on frontend development using React, TypeScript, and Next.js. My goal is to deliver high-quality, user-friendly interfaces that enhance user experiences.`,
+    paragraph: `I specialize in delivering high-quality, performant, and accessible interfaces using React, TypeScript, and Next.js.`,
   },
   about: {
     paragraphs: [
@@ -25,7 +25,7 @@ const content = {
     projects: [
       {
         title: "Kiyo",
-        description: `Kiyo is a web application that helps users find and book appointments with local massage therapists. I led the development of the MVP, focusing on optimizing performance and accessibility to ensure a seamless user experience. I collaborated closely with the team to align project milestones with business goals and translated intricate designs into responsive web pages.`,
+        description: `Spearheaded the end-to-end development of Kiyo using Typescript, React, and Next JS, completing the initial MVP in 3 months. Optimized performance and accessibility using Core Web Vitals resulting in over 50% faster load times. Leveraged Tailwind CSS to craft an intuitive user interface that meets and exceeds industry standards. Utilized Git and Github for version control and collaboration with other developers on the team.`,
         liveURL: "https://mykiyo.com",
         techBadges: [
           "React",

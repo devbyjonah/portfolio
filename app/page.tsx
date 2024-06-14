@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Observer />
-      <section className="py-28 relative min-h-screen md:items-start text-center sm:text-left w-full sm:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-6">
+      <section className="py-28 relative min-h-screen md:items-start text-center sm:text-left w-full sm:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-2 sm:px-6">
         <Heading
           className="opacity-0 on-scroll"
           style={{ animationDelay: "200ms", animationDuration: "650ms" }}
@@ -44,14 +44,18 @@ export default function Home() {
         />
         <div
           style={{ animationDelay: "500ms", animationDuration: "650ms" }}
-          className="opacity-0 on-scroll flex flex-col sm:flex-row items-center gap-6"
+          className="opacity-0 on-scroll flex flex-col sm:flex-row items-center"
         >
-          <Link className="flex-shrink-0" href="/resume.pdf" target="_blank">
-            <button className="animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl px-6 h-16 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg">
+          <Link
+            className="md:w-1/2 flex-shrink-0 pb-8 sm:pb-0"
+            href="/resume.pdf"
+            target="_blank"
+          >
+            <button className="whitespace-nowrap animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl px-12 sm:px-6 md:px-12 h-16 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg">
               Check out my resume!
             </button>
           </Link>
-          <div className="md:pl-4 flex gap-6">
+          <div className="md:w-1/2 sm:pl-4 flex gap-4 sm:gap-2 md:gap-6">
             <LogoButton href="https://github.com/devbyjonah">
               <PiGithubLogoBold />
             </LogoButton>
@@ -213,6 +217,9 @@ export default function Home() {
             className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-2xl"
             type="text"
             placeholder="Jonah Wagner"
+            autoComplete="name"
+            minLength={2}
+            maxLength={100}
             required
           />
           <label className="-mb-2 dark:text-gray-300" htmlFor="email">
@@ -223,6 +230,9 @@ export default function Home() {
             className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-2xl"
             type="email"
             placeholder="devbyjonah@gmail.com"
+            autoComplete="email"
+            minLength={5}
+            maxLength={300}
             required
           />
           <label className="-mb-2 dark:text-gray-300" htmlFor="message">
@@ -231,9 +241,11 @@ export default function Home() {
           <textarea
             required
             minLength={10}
+            maxLength={2000}
             id="message"
             className="border-4 border-logo-blue/50 focus:border-logo-blue rounded-2xl"
             placeholder="Let's connect!"
+            autoComplete="off"
             rows={5}
           />
           <input
