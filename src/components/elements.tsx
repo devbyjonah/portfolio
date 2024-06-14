@@ -57,7 +57,7 @@ function Paragraph({
     <p
       style={style}
       className={
-        "text-md lg:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 " +
+        "text-lg sm:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 " +
           className ?? ""
       }
     >
