@@ -20,8 +20,8 @@ export const content = {
     technology: [
       "Javascript (ES6+)",
       "Typescript",
-      "React",
-      "Next",
+      "React.js",
+      "Next.js",
       "Tailwind",
       "Redux",
       "Node.js",
