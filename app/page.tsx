@@ -1,121 +1,63 @@
 import {
-  PiGithubLogoBold,
-  PiLinkedinLogoBold,
-  PiTwitterLogoBold,
-  PiArrowDown,
-  PiSmiley,
-  PiShareFatBold,
-  PiEnvelopeBold,
-} from "react-icons/pi";
-
-import Image from "next/image";
-import Link from "next/link";
-
-import {
   Heading,
   Paragraph,
   LogoButton,
   TechBadge,
+  Divider,
 } from "@/src/components/elements";
-
-import Observer from "@/src/components/observer";
-import content from "@/src/utils/content";
+import { PiGithubLogoBold, PiSmiley, PiShareFatBold } from "react-icons/pi";
+import { content, socials } from "@/src/utils/constants";
 const { intro, about, work } = content;
+import Observer from "@/src/components/observer";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="flex flex-col">
       <Observer />
+
       <section className="py-28 relative min-h-screen md:items-start text-center sm:text-left w-full sm:w-5/6 max-w-5xl flex flex-col justify-center gap-6 md:gap-12 mx-auto px-2 sm:px-6">
         <Heading
-          className="opacity-0 on-scroll"
           style={{ animationDelay: "200ms", animationDuration: "650ms" }}
           title={intro.title}
+          lcp
         />
         <Heading
           className="opacity-0 on-scroll text-light-text/70 dark:text-dark-text/70"
-          style={{ animationDelay: "300ms", animationDuration: "650ms" }}
+          style={{ animationDelay: "200ms", animationDuration: "650ms" }}
           title={intro.subtitle}
+          lcp
         />
         <Paragraph
           className="opacity-0 on-scroll"
-          style={{ animationDelay: "400ms", animationDuration: "650ms" }}
+          style={{ animationDelay: "500ms", animationDuration: "650ms" }}
           text={intro.paragraph}
         />
         <div
-          style={{ animationDelay: "500ms", animationDuration: "650ms" }}
+          style={{ animationDelay: "700ms", animationDuration: "650ms" }}
           className="opacity-0 on-scroll flex flex-col sm:flex-row items-center"
         >
-          <Link
-            className="md:w-1/2 flex-shrink-0 pb-8 sm:pb-0"
+          <a
+            className="md:w-1/2 flex-shrink-0 whitespace-nowrap animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl flex items-center font-bold rounded-2xl px-12 sm:px-6 md:px-12 h-16 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg"
             href="/resume.pdf"
             target="_blank"
           >
-            <button className="whitespace-nowrap animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl px-12 sm:px-6 md:px-12 h-16 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg">
-              Check out my resume!
-            </button>
-          </Link>
+            Check out my resume!
+          </a>
           <div className="md:w-1/2 sm:pl-4 flex gap-4 sm:gap-2 md:gap-6">
-            <LogoButton href="https://github.com/devbyjonah">
-              <PiGithubLogoBold />
-            </LogoButton>
-            <LogoButton href="https://linkedin.com/in/devbyjonah">
-              <PiLinkedinLogoBold />
-            </LogoButton>
-            <LogoButton href="https://twitter.com/devbyjonah">
-              <PiTwitterLogoBold />
-            </LogoButton>
-            <LogoButton href="mailto:devbyjonah@gmail.com">
-              <PiEnvelopeBold />
-            </LogoButton>
+            {socials.map((social, ind) => {
+              return (
+                <LogoButton label={social.label} key={ind} href={social.href}>
+                  <social.logo />
+                </LogoButton>
+              );
+            })}
           </div>
         </div>
-        <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
-          <Link href="/#about">
-            <PiArrowDown
-              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
-              size={30}
-            />
-          </Link>
-        </div>
+        <Divider url="/#about" />
       </section>
-      <section
-        id="about"
-        className="relative pt-32 pb-20 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
-      >
-        <div className="lg:w-3/5 flex flex-col gap-6 p-6">
-          <Heading className="opacity-0 on-scroll" title="About me" />
-          {about.paragraphs.map((text, ind) => {
-            return (
-              <Paragraph
-                className="opacity-0 on-scroll"
-                key={ind}
-                text={text}
-              />
-            );
-          })}
-          <Paragraph
-            className="opacity-0 on-scroll"
-            text="Here are some of the technologies I'm using currently:"
-          />
-          <ul className="opacity-0 on-scroll text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue flex gap-6 flex-wrap">
-            {about.technology.map((tech, ind) => {
-              return <li key={ind}>{tech}</li>;
-            })}
-          </ul>
-        </div>
-        <div className="flex justify-center items-center rounded-2xl border-2 border-logo-blue animate-pulseShadow overflow-hidden">
-          <Image alt="Me!" src="/jonahFinal.png" width={300} height={300} />
-        </div>
-        <div className=" animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
-          <Link href="/#work">
-            <PiArrowDown
-              className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
-              size={30}
-            />
-          </Link>
-        </div>
-      </section>
+
       <section
         id="work"
         className="relative px-4 sm:px-8 pt-32 pb-20 min-h-screen w-full max-w-5xl flex flex-col mx-auto justify-center"
@@ -142,6 +84,7 @@ export default function Home() {
                     target="_blank"
                   >
                     <PiGithubLogoBold className="inline-block border-2 border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
+                    <span className="sr-only">View on GitHub</span>
                   </Link>
                 )}
                 <Link
@@ -150,6 +93,7 @@ export default function Home() {
                   target="_blank"
                 >
                   <PiShareFatBold className="inline-block border-2 border-light-text text-light-text dark:border-dark-text dark:text-dark-text hover:bg-gradient-to-tr to-logo-blue/60 from-logo-blue/30 hover:animate-pulseShadow rounded-2xl p-2 h-12 w-12 md:h-16 md:w-16" />
+                  <span className="sr-only">View deployed app</span>
                 </Link>
               </div>
             </div>
@@ -183,27 +127,51 @@ export default function Home() {
                 height={450}
               />
             </Link>
-            <div className="animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
-              <Link href="/#contact">
-                <PiArrowDown
-                  className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"
-                  size={30}
-                />
-              </Link>
-            </div>
+            <Divider url="/#contact" />
           </div>
         ))}
       </section>
+
+      <section
+        id="about"
+        className="relative pt-32 pb-20 min-h-screen flex flex-col lg:flex-row items-center md:gap-6 w-full max-w-5xl mx-auto"
+      >
+        <div className="lg:w-3/5 flex flex-col gap-6 p-6">
+          <Heading className="opacity-0 on-scroll" title="About me" />
+          {about.paragraphs.map((text, ind) => {
+            return (
+              <Paragraph
+                className="opacity-0 on-scroll"
+                key={ind}
+                text={text}
+              />
+            );
+          })}
+          <Paragraph
+            className="opacity-0 on-scroll"
+            text="Here are some of the technologies I'm using currently:"
+          />
+          <ul className="opacity-0 on-scroll text-lg xl:text-xl font-light max-w-2xl dark:text-gray-300 text-gray-500 underline decoration-logo-blue flex gap-6 flex-wrap">
+            {about.technology.map((tech, ind) => {
+              return <li key={ind}>{tech}</li>;
+            })}
+          </ul>
+        </div>
+        <div className="flex justify-center items-center rounded-2xl border-2 border-logo-blue animate-pulseShadow overflow-hidden">
+          <Image alt="Me!" src="/jonahFinal.png" width={300} height={300} />
+        </div>
+        <Divider url="/#work" />
+      </section>
+
       <section
         id="contact"
         className="px-6 py-32 md:px-0 relative min-h-screen flex flex-col justify-center"
       >
         <div className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10">
           <Heading title="Contact" />
-          <Paragraph text="If you are interested in hiring a creative and driven Software Engineer, get in touch using the form below or connect with me on LinkedIn using the links at the top!" />
+          <Paragraph text="If you are interested in hiring a creative and driven Frontend Engineer, get in touch using the form below or connect with me on LinkedIn using the links at the top!" />
         </div>
         <form
-          data-netlify="true"
           action="success"
           name="contact"
           method="POST"
@@ -254,7 +222,7 @@ export default function Home() {
           />
         </form>
         <footer className="absolute bottom-0 left-0 w-full flex justify-center p-6">
-          <p className="text-logo-blue text-center text-lg font-extralight">
+          <p className="text-center text-lg font-extralight">
             designed and built by{" "}
             <span className="whitespace-nowrap">
               jonah wagner

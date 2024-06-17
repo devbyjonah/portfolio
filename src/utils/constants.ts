@@ -1,4 +1,11 @@
-const content = {
+import {
+  PiEnvelopeBold,
+  PiGithubLogoBold,
+  PiLinkedinLogoBold,
+  PiTwitterLogoBold,
+} from "react-icons/pi";
+
+export const content = {
   intro: {
     title: "Hi! My name is Jonah\u00A0Wagner.",
     subtitle: "I'm a Software Engineer from Sacramento,\u00A0CA.",
@@ -6,8 +13,9 @@ const content = {
   },
   about: {
     paragraphs: [
-      "I’m a passionate Front-end Developer with over 5 years of experience creating scalable and dynamic web applications. My most recent work experience is with Kiyo, where I led the development of an MVP web application. In this role, I focused on optimizing performance and accessibility, ensuring a seamless and engaging user experience. I collaborated closely with the team to align project milestones with business goals and translated intricate designs into responsive web pages.",
-      "In addition to my development work, I taught at CodeWizardsHQ, where I instructed a variety of courses ranging from beginner web development to advanced programming topics like game development and Object-Oriented Programming. I managed multiple classes simultaneously, contributing to curriculum refinement and achieving high student engagement and comprehension levels.",
+      "I’m a passionate Frontend Developer with over 5 years of experience creating scalable and dynamic web applications. My most recent work experience is with Kiyo, building a web app that provides an alternative to the traditional real estate market.",
+      "In addition to my development work, I taught at CodeWizardsHQ, where I instructed a variety of courses ranging from beginner web development to advanced programming topics like game development and Object-Oriented Programming.",
+      "I’m currently seeking new opportunities to work on exciting projects with a team that values collaboration, innovation, and continuous learning. If you’re interested in working together, feel free to reach out to me via email or any of my social media profiles.",
     ],
     technology: [
       "Javascript (ES6+)",
@@ -79,4 +87,21 @@ const content = {
   },
 };
 
-export default content;
+export const socials = [
+  {
+    href: "https://github.com/devbyjonah",
+    logo: PiGithubLogoBold,
+    label: "Github",
+  },
+  {
+    href: "https://linkedin.com/in/devbyjonah",
+    logo: PiLinkedinLogoBold,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://twitter.com/devbyjonah",
+    logo: PiTwitterLogoBold,
+    label: "Twitter",
+  },
+  { href: "mailto:devbyjonah@gmail.com", logo: PiEnvelopeBold, label: "Email" },
+];

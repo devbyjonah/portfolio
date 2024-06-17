@@ -18,16 +18,18 @@ export default function NavLinks() {
 		className?: string;
 	}) {
 		return (
-			<Link
-				onClick={() => setOpen(false)}
-				className={
-					" decoration-logo-blue text-xl font-semibold hover:underline hover:text-logo-blue " +
-					className
-				}
-				href={href}
-			>
-				{label}
-			</Link>
+			<li>
+				<Link
+					onClick={() => setOpen(false)}
+					className={
+						" decoration-logo-blue text-xl font-semibold hover:underline hover:text-logo-blue " +
+						className
+					}
+					href={href}
+				>
+					{label}
+				</Link>
+			</li>
 		);
 	}
 

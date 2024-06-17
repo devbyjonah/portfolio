@@ -1,7 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+// set display to "swap" to ensure text is visible during font load
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 import Header from "../src/components/header";
 import Providers from "../src/components/Providers";
 
