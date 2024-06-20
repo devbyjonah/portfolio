@@ -11,6 +11,8 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSending) return;
+
     setIsSending(true);
     const form = new FormData(e.currentTarget);
     let result;
@@ -23,21 +25,22 @@ export default function Contact() {
         router.push("/success");
       } else {
         alert("Failed to send message. Please try again later.");
+        setIsSending(false);
       }
-      setIsSending(false);
     }
   };
 
   return (
-    <section className="px-6 py-32 md:px-0 relative min-h-screen flex flex-col justify-center">
+    <section
+      id="contact"
+      className="px-6 py-32 md:px-0 relative min-h-screen flex flex-col justify-center"
+    >
       <div className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10">
         <Heading title="Contact" />
         <Paragraph text="If you are interested in hiring a creative and driven Frontend Engineer, get in touch using the form below or connect with me on LinkedIn using the links at the top!" />
       </div>
       <form
         onSubmit={handleSubmit}
-        name="contact"
-        id="contact"
         className="opacity-0 on-scroll text-gray-600 mx-auto flex max-w-2xl flex-col gap-4 w-full"
       >
         <label className="-mb-2 dark:text-gray-300" htmlFor="name">
