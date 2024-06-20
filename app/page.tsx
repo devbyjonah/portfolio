@@ -11,6 +11,7 @@ const { intro, about, work } = content;
 import Observer from "@/src/components/observer";
 import Image from "next/image";
 import Link from "next/link";
+import Contact from "@/src/components/Contact";
 
 export default function Home() {
   return (
@@ -45,7 +46,7 @@ export default function Home() {
           >
             Check out my resume!
           </a>
-          <div className="md:w-1/2 sm:pl-4 flex gap-4 sm:gap-2 md:gap-6">
+          <div className="md:w-1/2 sm:pl-4 md:pl-8 flex gap-4 sm:gap-2 md:gap-6">
             {socials.map((social, ind) => {
               return (
                 <LogoButton label={social.label} key={ind} href={social.href}>
@@ -162,75 +163,16 @@ export default function Home() {
         </div>
         <Divider url="/#work" />
       </section>
-
-      <section
-        id="contact"
-        className="px-6 py-32 md:px-0 relative min-h-screen flex flex-col justify-center"
-      >
-        <div className="opacity-0 on-scroll flex flex-col gap-6 mx-auto mb-10">
-          <Heading title="Contact" />
-          <Paragraph text="If you are interested in hiring a creative and driven Frontend Engineer, get in touch using the form below or connect with me on LinkedIn using the links at the top!" />
-        </div>
-        <form
-          action="success"
-          name="contact"
-          method="POST"
-          className="opacity-0 on-scroll text-gray-600 mx-auto flex max-w-2xl flex-col gap-4 w-full"
-        >
-          <label className="-mb-2 dark:text-gray-300" htmlFor="name">
-            Name:
-          </label>
-          <input
-            id="name"
-            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-2xl"
-            type="text"
-            placeholder="Jonah Wagner"
-            autoComplete="name"
-            minLength={2}
-            maxLength={100}
-            required
-          />
-          <label className="-mb-2 dark:text-gray-300" htmlFor="email">
-            Email:
-          </label>
-          <input
-            id="email"
-            className="border-4 dark:bg-light-bg border-logo-blue/50 focus:border-logo-blue rounded-2xl"
-            type="email"
-            placeholder="devbyjonah@gmail.com"
-            autoComplete="email"
-            minLength={5}
-            maxLength={300}
-            required
-          />
-          <label className="-mb-2 dark:text-gray-300" htmlFor="message">
-            Message:
-          </label>
-          <textarea
-            required
-            minLength={10}
-            maxLength={2000}
-            id="message"
-            className="border-4 border-logo-blue/50 focus:border-logo-blue rounded-2xl"
-            placeholder="Let's connect!"
-            autoComplete="off"
-            rows={5}
-          />
-          <input
-            className="mx-auto px-12 animate-pulseShadow hover:drop-shadow-logo-blue my-4 md:my-0 text-xl font-bold rounded-2xl p-3 max-w-fit bg-gradient-to-tr to-logo-blue text-gray-600 dark:text-dark-bg from-light-bg"
-            type="submit"
-          />
-        </form>
-        <footer className="absolute bottom-0 left-0 w-full flex justify-center p-6">
-          <p className="text-center text-lg font-extralight">
-            designed and built by{" "}
-            <span className="whitespace-nowrap">
-              jonah wagner
-              <PiSmiley size={30} className="inline ml-2 text-logo-blue" />
-            </span>
-          </p>
-        </footer>
-      </section>
+      <Contact />
+      <footer className="w-full flex justify-center p-6">
+        <p className="text-center text-lg font-extralight">
+          designed and built by{" "}
+          <span className="whitespace-nowrap">
+            jonah wagner
+            <PiSmiley size={30} className="inline ml-2 text-logo-blue" />
+          </span>
+        </p>
+      </footer>
     </main>
   );
 }
