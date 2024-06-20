@@ -86,7 +86,7 @@ function Paragraph({
 
 function Divider({ url }: { url: string }) {
   return (
-    <div className="animate-bounce p-2 absolute right-0 bottom-0 w-full flex justify-center">
+    <div className="animate-bounce p-2 w-full flex justify-center">
       <Link href={url}>
         <PiArrowDown
           className="opacity-0 on-scroll text-logo-blue border-2 border-logo-blue rounded-2xl"

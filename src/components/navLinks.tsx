@@ -22,7 +22,7 @@ export default function NavLinks() {
 				<Link
 					onClick={() => setOpen(false)}
 					className={
-						" decoration-logo-blue text-xl font-semibold hover:underline hover:text-logo-blue " +
+						"decoration-logo-blue text-xl font-semibold hover:underline hover:text-logo-blue " +
 						className
 					}
 					href={href}
@@ -37,8 +37,8 @@ export default function NavLinks() {
 		<>
 			<ul className="hidden sm:flex gap-10 items-center">
 				<NavLink href="/#intro" label="Intro" />
-				<NavLink href="/#about" label="About" />
 				<NavLink href="/#work" label="Work" />
+				<NavLink href="/#about" label="About" />
 				<NavLink href="/#contact" label="Contact" />
 			</ul>
 			<button
@@ -56,13 +56,13 @@ export default function NavLinks() {
 
 			<ul
 				id="nav-links"
-				className={`bg-light-bg dark:bg-dark-bg md:hidden fixed top-[7rem] right-0 h-full w-full flex flex-col gap-10 items-center transition-transform ${
+				className={`py-4 bg-light-bg/95 dark:bg-dark-bg/95 md:hidden absolute top-24 right-0 min-h-screen w-full flex flex-col gap-10 items-center transition-transform backdrop-blur; ${
 					open ? "transform translate-x-0" : "transform translate-x-full"
 				}`}
 			>
 				<NavLink className="mt-20" href="/#intro" label="Intro" />
-				<NavLink href="/#about" label="About" />
 				<NavLink href="/#work" label="Work" />
+				<NavLink href="/#about" label="About" />
 				<NavLink href="/#contact" label="Contact" />
 			</ul>
 		</>

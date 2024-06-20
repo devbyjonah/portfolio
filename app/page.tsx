@@ -56,8 +56,9 @@ export default function Home() {
             })}
           </div>
         </div>
-        <Divider url="/#about" />
       </section>
+
+      <Divider url="/#work" />
 
       <section
         id="work"
@@ -128,10 +129,11 @@ export default function Home() {
                 height={450}
               />
             </Link>
-            <Divider url="/#contact" />
           </div>
         ))}
       </section>
+
+      <Divider url="/#about" />
 
       <section
         id="about"
@@ -161,8 +163,10 @@ export default function Home() {
         <div className="flex justify-center items-center rounded-2xl border-2 border-logo-blue animate-pulseShadow overflow-hidden">
           <Image alt="Me!" src="/jonahFinal.png" width={300} height={300} />
         </div>
-        <Divider url="/#work" />
       </section>
+
+      <Divider url="/#contact" />
+
       <Contact />
       <footer className="w-full flex justify-center p-6">
         <p className="text-center text-lg font-extralight">
