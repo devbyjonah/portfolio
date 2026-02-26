@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 // set display to "swap" to ensure text is visible during font load
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 import Header from "../src/components/header";
@@ -37,6 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
+          <Analytics />
           <Header />
           {children}
         </Providers>
